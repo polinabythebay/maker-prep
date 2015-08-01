@@ -1,0 +1,52 @@
+character frequency
+
+string
+looks at character and stores each character as a key, and value of that key will be how many times character appeared
+
+input string
+output hash, keys are distinct characters, values are integers
+
+
+hash=  associative arrays
+
+instantiate hash
+iterate through string
+hash lookup
+if char is in hash lookup, increment value
+if char is not in hash lookup, add to hash as key and set value to 1
+return hash
+
+
+var char_freq =  (str) {
+
+var freq_table = {};
+
+  for (var i= str.length-1; >=0; i--) {
+
+      //check if array key exists
+      if (freq_table[i] === undefined) {
+      //add to hash as key and set value to 1
+      char_freq[i] = 1;
+      } else {
+        //increment value of i
+       var temp = char_freq[i];
+       temp++;
+       char_freq[i] = temp;
+      }
+  }
+}
+
+var charfreq = function(str) {
+  var object = {};
+  //string to array
+  var toarray = str.split("");
+  for (var i = 0; i < toarray.length; i++){
+
+  if (object[toarray[i]]){
+    object[toarray[i]]++;
+  } else {
+  object[toarray[i]] = 1;
+  }
+  }
+  return object;
+}
