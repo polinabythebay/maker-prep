@@ -1,4 +1,28 @@
 
+//Generators
+
+var generatorFactory = function*() {
+  yield 1;
+  yield 2;
+  yield 3;
+};
+undefined
+var exampleGenerator = generatorFactory();
+undefined
+exampleGenerator.next();
+Object {value: 1, done: false}
+exampleGenerator.next();
+Object {value: 2, done: false}
+exampleGenerator.next();
+Object {value: 3, done: false}
+exampleGenerator.next();
+Object {value: undefined, done: true}
+exampleGenerator.next();
+Object {value: undefined, done: true}
+
+
+
+
 //Exercise 7
 
 //Fibonacci
