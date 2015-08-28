@@ -1,0 +1,16 @@
+Jquery enabled
+
+$ is an object
+
+you don't want jquery to mess with your functions. so you need to use the $ object.
+
+$('query selector').method_name(params)
+
+$('h1').css()
+
+select an html tag -> 'tagname' ex. 'h1'
+select based on class -> .classname
+
+jquery injector
+
+

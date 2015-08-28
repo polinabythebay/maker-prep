@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+
+  <head>
+  </head>
+
+  <body>
+
+  <script src='https://code.jquery.com/jquery-2.1.1.js'></script>
+  <script type="text/javascript">
+
+  var keepgoing = true;
+
+  while(keepgoing){
+    var answer = prompt("what color would you like this webpage?");
+    if (answer === 'green'){
+      alert("That was an excellent choice!");
+      $('body').css('background-color', 'green');
+      keepgoing = false;
+      } else {
+        alert("that was unacceptable. please try again");
+      }
+  }
+  </script>
+
+  </body>
+
+
+
+
+
+
+
+
+</html>

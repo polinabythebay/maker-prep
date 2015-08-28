@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>HTML Document</title>
+</head>
+<body>
+<div id="everything">
+      <h1>A heading!</h1>
+      <p>Here's some text!</p>
+      <p>Here's a second set of text!</p>
+      <div class="holder">
+          <ul>
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+          </ul>
+      </div>
+      <div class="holder">
+          <ol>
+              <li>List Item 4</li>
+              <li>List Item 5</li>
+              <li>List Item 6</li>
+          </ol>
+      </div>
+      <div id="change-me">This part needs to change!</div>
+      <div id="secret">We should hide this!</div>
+  </div>
+  <!-- include Jquery here -->
+  <script src="https://code.jquery.com/jquery-2.1.1.js"> </script>
+  <script>
+  // your code here!
+  //front color of h1 elements to blue
+  $('h1').css('color', 'blue');
+  //targets the body element and turns it pink
+  $('body').css('background-color', 'pink');
+  //increase font size of elements with ID of everything
+  $('#everything').css('font-size', 20);
+  //class holder, adds a black border
+    $('.holder').css({
+  'border-color' : 'black',
+  'border-style' : 'solid',
+  'border-width' : 'medium'
+  });
+
+  $('ul li').css('font-weight', 'bold');
+
+  $('h1 + p').css('background-color', 'green');
+
+  $('#secret').css("display", "block");
+
+  $('#change-me').text("I have changed the text!");
+  $('#change-me').append(" I have appended new text.");
+  $('#change-me').html("<p>paragraph 1 </p> <p> paragraph 2</p>");
+  $('li').text("let's change this to a new sentence");
+  $('li').append("lets append the new sentence!");
+  
+
+
+  </script>
+</body>

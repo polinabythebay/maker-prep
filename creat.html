@@ -1,0 +1,22 @@
+
+<html>
+
+<body>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script type="text/javascript">
+
+var new_div = $('<div class="Important">Got a new div coming in here</div>');
+
+new_div.css('color','red').attr('id', 'primary').text("Hi, I'm new here");
+
+//is it on the page yet?
+
+$('body').append(new_div);
+new_div.fadeOut(2000).delay(1000).fadeIn().slideUp(4000);
+
+
+
+
+</script>
+</body>
+</html>
