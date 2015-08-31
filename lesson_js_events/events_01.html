@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+    .highlighted    {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="target">
+    Target 1
+  </div>
+  <br>
+  <div class="target">
+    Target 2
+  </div>
+  <br>
+  <div class="target">
+    Target 3
+  </div>
+  <br>
+  <div class="target">
+    Target 4
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script type="text/javascript">
+
+  // $('.target').each(function(index, item){
+  //   $('item').on('mouseover', function(){
+  //     $(this).addClass('highlighted');
+  //     });
+  // });
+
+  $('.target').on('mouseover', function(){
+    $(this).addClass('highlighted');
+  });
+
+  $('.target').on('mouseleave', function(){
+  $(this).removeClass('highlighted');
+  });
+
+  $('#money').click(function(){
+    $("#show-img").css('visibility', 'visible');
+  });
+
+  //third way of doing it with jquery
+  $('#thirdway').click(function(){
+    $(this).show().css('color','red').text('the text has been read!');
+  });
+
+  //second way of doing it with jquery
+  $('#adiv').on('click', function(){
+    console.log("A div has been clicked!");
+  });
+
+  //one way of doing it without jquery
+  var fn = function(){
+    console.log("hey");
+  };
+
+  // document.querySelector('#target').addEventListener('click', fn);
+
+  </script>
+</body>
+</html>

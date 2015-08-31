@@ -1,0 +1,11 @@
+synchronous programming
+
+chrome plugin --> inject jquery animation that does something.
+
+if this event gets clicked, then execute this block of code
+
+event is something that can happen. tied code to those events.
+tied code to those events using a callback.
+
+write code that responds to a user's input dynamically
+

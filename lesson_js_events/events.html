@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <button>Beeper</button>
+  <div></div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+$('button').on('click', function(event){
+  alert("beep!");
+
+  //if you give it an object, it lets you inspect the object
+  //isDefaultPrevented();
+  //PreventDefault --> use often with forms
+
+  console.dir(event);
+
+  //calling context
+
+  //this: keyword inside any function. 
+  //behind the scenes all functions are methods
+  //they are properties on the window object
+
+  //this refers to the dom element the event was triggered on
+  //item event happened on
+  console.log(this);
+
+  //when you click a button, it will now disappear
+
+  $(this).slideUp();
+
+});
+
+console.log('look!');
+</script>
+
+</body>
+</html>
