@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>
+  </title>
+</head>
+<body>
+
+  <div id="weather">The weather!</div>
+
+    <button class = "city" id="san-francisco">San Francisco</button>
+    <button class = "city" id="seattle">Seattle</button>
+    <button class = "city" id="boston">Boston</button>
+
+  <br>
+
+  The weather is <div id="description"></div>
+  Current Temperature is <div id="current-temp"></div>
+  The high temp is <div id="high-temp"></div>
+  The low temp is <div id="low-temp"></div>
+  The current wind speed is <div id="wind-speed"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script type="text/javascript">
+
+  //for debugging purposes
+  var sf_weather;
+
+  var city_url = function(city_name){
+    var city_enc = encodeURIComponent(city_name);
+    return "http://api.openweathermap.org/data/2.5/weather?q="+city_enc+"&mode=json&units=imperial";
+  }
+
+  var display_weather_data = function(result){
+    $('#current-temp').text(result.main.temp);
+    $('#high-temp').text(result.main.temp_max);
+    $('#low-temp').text(result.main.temp_min);
+    $('#wind-speed').text(result.wind.speed);
+    $('#description').text(result.weather[0].description);
+    sf_weather = result;
+  }
+
+  var city;
+
+   // var cities = document.getElementsByTagName("button");
+  //cities[0].innerHTML
+
+  //all city buttons
+  //when one of them is clicked, I want to toggle the last one
+
+  //wrap ajax request in a function, and have it take a query parameter.
+
+  //apply a click handler to a class that all your buttons share
+  //in a callback function, use this.
+  //pass that into some kind of function
+
+  //when you click on a button, you add a class
+  //when you click on another button, you can cycle through all your buttons and remove the class
+
+  //jquery.removeclass(active)
+
+  $('.city').on('click', function(event) {
+    //debugging
+    console.log("You clicked on: ", event.toElement.innerHTML);
+    city = event;
+    console.log($(this).text());
+
+    $('.city').show().css('color','black');
+    $("#"+event.toElement.id).show().css('color','red');
+    event.preventDefault();
+
+     $.ajax({type: "GET",
+        url: city_url(event.toElement.innerHTML),
+        success: function(result){
+          display_weather_data(result);
+      }});
+  });
+
+  // $(document).ready(function(){
+  //   $("#san-francisco").click(function(e){
+  //     $('#seattle').show().css('color','black');
+  //     $(this).show().css('color','red');
+  //     e.preventDefault();
+  //     $.ajax({type: "GET",
+  //       url: city_url('San Francisco'),
+  //       success: function(result){
+  //         display_weather_data(result);
+  //       }});
+  //     });
+
+  //    $("#seattle").click(function(e){
+  //     $('#san-francisco').show().css('color','black');
+  //     $(this).show().css('color','red');
+  //     e.preventDefault();
+  //     $.ajax({type: "GET",
+  //       url: city_url('Seattle'),
+  //       success: function(result){
+  //         display_weather_data(result);
+  //       }});
+  //     });
+
+    // });
+
+  </script>
+</body>
+</html>
