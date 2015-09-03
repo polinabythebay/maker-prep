@@ -333,7 +333,9 @@ Array.prototype.concatAll = function() {
     // ------------ INSERT CODE HERE! ----------------------------
     // Add all the items in each subArray to the results array.
     // ------------ INSERT CODE HERE! ----------------------------
-    subArray.forEach(pushSubArray);
+    subArray.forEach(function(id){
+      results.push(id);
+    });
   });
 
   return results;
@@ -343,6 +345,9 @@ Array.prototype.concatAll = function() {
 // JSON.stringify([ [1,2,3], [4,5,6], [7,8,9] ].concatAll()) === "[1,2,3,4,5,6,7,8,9]"
 // [1,2,3].concatAll(); // throws an error because this is a one-dimensional array
 
+
+//Exercise 11: 
+//Exercise 11: Use map() and concatAll() to project and flatten the movieLists into an array of video ids
 
 
     
