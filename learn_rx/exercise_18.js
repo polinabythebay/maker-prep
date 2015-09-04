@@ -17,15 +17,19 @@ function() {
     return boxart.url;
  }
 
- var combiner = function(accumulatedValue, currentValue){
-        currentValue = boxart.width * boxart.height;
-    if (currentValue > accumulatedValue) {
-      largestBoxart = boxart;
-      maxSize = currentSize;
+ var combiner = function(largestBoxArt, currentBoxArt){
+      currentSize = currentBoxArt.width * currentBoxArt.height;
+      largestSize = largestBoxArt.width * largestBoxArt.height;
+
+    if (currentSize > largestSize) {
+      return currentBoxArt;
+    } else{
+      return largestBoxArt;
     }
  }
 
-  return boxarts.
-    reduce   // Complete this expression
+  return boxarts.reduce(combiner).map(returnURL);
+
 }
   
+
