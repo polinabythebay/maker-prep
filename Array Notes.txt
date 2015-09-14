@@ -1,0 +1,35 @@
+Array Notes
+
+Arrays are just like objects.
+
+obj = {
+	key: value
+}
+
+1. all keys are sequential integers
+2. have a different instantiation pattern
+3. properties and methods for working with sequential keys
+
+length property
+have methods
+
+
+Method: function attached to an object
+
+Iterating through arrays
+
+for (var i=0; i < array.length; i++){
+	console.log(array[i]);
+}
+
+shift is pop from the front.
+
+unshift is push from the front (push to front)
+
+Arrays are pass by reference, so you've got a few things pointing to the same object in memory that can screw up the object
+
+Array.concat does not change the original two arrays. It creates a new array in memory.
+
+
+
+
